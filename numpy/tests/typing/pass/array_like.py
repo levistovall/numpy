@@ -14,14 +14,14 @@ x8: ArrayLike = np.array([1, 2, 3])
 x9: ArrayLike = [1, 2, 3]
 x10: ArrayLike = (1, 2, 3)
 x11: ArrayLike = "foo"
-
+x12: ArrayLike = memoryview(b'foo')
 
 class A:
     def __array__(self, dtype: DtypeLike = None) -> np.ndarray:
         return np.array([1, 2, 3])
 
 
-x12: ArrayLike = A()
+x13: ArrayLike = A()
 
 scalar: _SupportsArray = np.int64(1)
 scalar.__array__(np.float64)
